@@ -1,13 +1,138 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+
+
+.wrapper{
+    padding: 100px;
+    width: 900px;
+    display: block;
+    text-align: center;
+    margin: 0 auto;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.roles{
+    font-size: 40px;
+    height: 50px;
+    vertical-align: middle;
+    overflow: hidden;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.roles div{
+     height: 50px;
+     transition: margin-top 1s ease-in-out;
+}
+
+img{
+     --a : 8deg;
+     width: 250px;
+     aspect-ratio: 1;
+     border-radius: 20px;
+     transform: perspective(400px) rotate3d(var(--r,1,-1),0,calc(var(--i,1)) * var(--a));
+     -webkit-mask: linear-gradient(135deg,#00c 40%,#000,#000c 60%) 100% 100%/250% 250%;
+     transition: 0.4s;
+     cursor: pointer;
+}
+
+.alt{
+     --r : 1 , 1 ;
+     -webkit-mask : linear-gradient(45deg,#00c 40%,#000,#000c 60%) 0% 100%/250% 250%;
+}
+
+img:hover{
+     --i : -1;
+     -webkit-mask-position: 0 0 ;
+
+}
+alt:hover{
+     -webkit-mask-position : 100% 0;
+
+}
+
+
+/* DropDown */
+.box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+}
+
+.box select{
+     background-color: #0563af;
+     color: white;
+     padding: 12px;
+     width: 250px;
+     border: none;
+     font-size: 20px;
+     box-shadow: 0 5px 25px rgba(0,0,0,0.2);
+     appearance: button;
+     outline: none;
+}
+
+.box::before{
+     content: "\f13a";
+     position: absolute;
+     top: 0;
+     right: 0;
+     width: 20%;
+     height: 100%;
+     text-align: center;
+     font-size: 28px;
+     line-height: 45px;
+     color: rgba(255, 255, 255, 0.5);
+     background-color: rgba(255, 255,255,0.1);
+     pointer-events: none;
+}
+
+.box select
+{
+     -webkit-appearance: none;
+}
+
+.header{
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 40px 30px rgba(0,0,0,0.1);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255,255,255,0.3);
+    height: 70px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    color: white;
+    width: 100vw;
+}
+
+.container{
+    margin-top: 70px;
+}
+
+.target{
+    height: 300px;
+    border: 4px solid #4b4545;
+
+}
+
+h1{
+    position: relative;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    font-weight: 400;
+    font-size: 120px;
+    color: rgb(9, 8, 8);
+}
+
+a{
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 20px;
+    color: rgb(2, 2, 2);
+
 }
